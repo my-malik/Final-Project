@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+<p>
+    Here are the players in your team!
+</p>
+{% for player in all_players %}
+    <p>
+        Player no. #{{ player.id }}<br>
+        {{ player.player }} <br>
+        {{ player.position }}
+        <br>
+    </p>
+{% endfor %}
+{% endblock body %}
