@@ -2,8 +2,7 @@
 {% block body %}
 <form method="POST">
     {{ form.hidden_tag() }}
-    {{ form.player.label }} {{ form.player }}
-    {{ form.position.label }} {{ form.position }}<br>
+    {{ form.player_name.label }} {{ form.player_name }}<br>
     {{ form.submit }}<br>
 </form>
 {% endblock body %}

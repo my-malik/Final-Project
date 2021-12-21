@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for 
 from application import app, db
 from application.models import Players
-from application.forms import PlayerForm
+from application.forms import Player_nameForm
 
 @app.route('/')
 def home():
@@ -12,14 +12,13 @@ def home():
 
 @app.route('/create_player', methods=["GET","POST"])
 def create_player():
-    form = PlayerForm()
+    form = Player_nameForm()
 
     if request.method == "POST":
-        new_player = Players(player=form.player.data) 
-        new_position = Players(position=form.position.data)
+        new_player = Players(player_name=form.player_name.data) 
         db.session.add(new_player)
-        db.session.add(new_position)
         db.session.commit()
+        
         return redirect(url_for("home"))
     return render_template("create_player.html", title="Add a player", form=form)
 

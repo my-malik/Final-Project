@@ -3,11 +3,11 @@
 <p>
     Here are the players in your team!
 </p>
-{% for player in all_players %}
+{% for player_name in all_players %}
     <p>
-        Player no. #{{ player.id }}<br>
-        {{ player.player }} <br>
-        {{ player.position }}
+        Player no. #{{ player_name.id }}<br>
+        {{ player_name.player_name }} <br>
+
         <br>
     </p>
 {% endfor %}
