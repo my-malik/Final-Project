@@ -22,3 +22,26 @@ def create_player():
         return redirect(url_for("home"))
     return render_template("create_player.html", title="Add a player", form=form)
 
+
+@app.route('/update_player/<int:id>', methods=["GET","POST"])
+def update_player(id):
+
+    form = Player_nameForm()
+    player = Players.query.get(id)
+
+    if request.method == "POST":
+        player.player_name = form.player_name.data
+
+        db.session.commit()
+        
+        return redirect(url_for("home"))
+    return render_template("update_player.html", player=player, form=form)
+    
+
+
+        
+
+
+
+
+
