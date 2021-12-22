@@ -5,10 +5,10 @@
 </p>
 {% for player_name in all_players %}
     <p>
-        Player no. #{{ player_name.id }}<br>
+        Player no.{{ player_name.id }}<br>
         {{ player_name.player_name }} <br>
-        <a href="{{ url_for ('update_player', id=player_name.id )}}"> Update player </a>
-
+        <a href="{{ url_for ('update_player', id=player_name.id )}}"> Update player </a> <br>
+        <a href="{{ url_for ('delete_player', id=player_name.id )}}"> Delete player </a>
         <br>
     </p>
 {% endfor %}

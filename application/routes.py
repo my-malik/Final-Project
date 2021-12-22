@@ -37,6 +37,14 @@ def update_player(id):
         return redirect(url_for("home"))
     return render_template("update_player.html", player=player, form=form)
     
+@app.route('/delete_player/<int:id>')
+def delete_player(id):
+    player = Players.query.get(id)
+    db.session.delete(player)
+    db.session.commit()
+        
+    return redirect(url_for("home"))
+
 
 
         
