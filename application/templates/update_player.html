@@ -1,11 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<b> Current player: </b> {{ player.player_name }}
+<b> Current player: </b> {{ player.player_name.title() }}
+
 
 <form method="POST" action=''>
     {{ form.hidden_tag() }}
-    {{ form.player_name.label }} {{ form.player_name }}<br>
+    {{ form.player_name.label }} {{ form.player_name }}
+    {{ form.position.label }} {{ form.position }}
     {{ form.submit }}<br>
 </form>
 {% endblock body %}

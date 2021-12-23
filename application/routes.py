@@ -15,7 +15,7 @@ def create_player():
     form = Player_nameForm()
 
     if request.method == "POST":
-        new_player = Players(player_name=form.player_name.data) 
+        new_player = Players(player_name=form.player_name.data, position=form.position.data) 
         db.session.add(new_player)
         db.session.commit()
         
@@ -31,11 +31,10 @@ def update_player(id):
 
     if request.method == "POST":
         player.player_name = form.player_name.data
-
         db.session.commit()
         
         return redirect(url_for("home"))
-    return render_template("update_player.html", player=player, form=form)
+    return render_template("update_player.html", title="Update player", player=player, form=form)
     
 @app.route('/delete_player/<int:id>')
 def delete_player(id):

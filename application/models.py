@@ -8,8 +8,8 @@ from application import db
 
 class Players(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    player_name = db.Column(db.String(255), nullable=False)
-    # position = db.Column(db.String(255), nullable=False)
+    player_name = db.Column(db.String(30), nullable=False)
+    position = db.Column(db.String(30),nullable=False)  
     # team_id = db.Column(db.Integer, db.ForeignKey('teams.id'), nullable=False)
 
 

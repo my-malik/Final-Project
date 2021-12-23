@@ -1,15 +1,17 @@
 {% extends "layout.html" %}
 {% block body %}
-<p>
-    Here are the players in your team!
-</p>
+
+    <p style="color:rgb(0, 0, 0)">Here are the players in your team!</p>
+
+
 {% for player_name in all_players %}
-    <p>
-        Player no.{{ player_name.id }}<br>
-        {{ player_name.player_name }} <br>
+    <p> 
+        Player {{ player_name.id }}: <b>{{ player_name.player_name.title() }}</b> <br>
+        Position: <b> {{ player_name.position }}</b> <br>
+        <br>
         <a href="{{ url_for ('update_player', id=player_name.id )}}"> Update player </a> <br>
         <a href="{{ url_for ('delete_player', id=player_name.id )}}"> Delete player </a>
-        <br>
+        
     </p>
 {% endfor %}
 {% endblock body %}

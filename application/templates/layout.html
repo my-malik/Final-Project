@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
-        <title> Football App - {{ title }}</title>
+       <style> body{ background-image: linear-gradient(to right, #46e3ff, #1367c7, #690ca7, rgb(223, 16, 250)) } 
+    
+    </style>
+        <title>  Football App - {{ title }}</title>
     </head>
     <body>
+        
         <navbar>
-            <a href="/">Home</a>
+            <a href="/">Home</a> 
             <a href="/create_player">Add New Player</a>
         </navbar>
         <h1>
@@ -13,5 +18,6 @@
         </h1>
         {% block body %}
         {% endblock body %}
+        
     </body>
 </html>
