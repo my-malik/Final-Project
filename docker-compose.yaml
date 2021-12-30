@@ -1,20 +1,20 @@
 version: "3.8"
 services:
-  frontend:
-    build: ./application
-    image: football-app:latest
-    container_name: football-app-frontend
+  application:
+    container_name: football_app
+    image: mmalik/football_app:latest
+    build: .
    ports:
     - target: 5000
       published: 80
-  backend:
-    build: ./application
-    image: football-app:latest
-    container_name: football-app-backend
     environment:
       DATABASE_URI:
       CREATE_SCHEMA:
-    ports:
-    - target: 5000
-      published: 5000
+    database:
+      container_name:
+      image: 
+      environment:
+        MYSQL_ROOT_PASSWORD:
+        MYSQL_DATABASE: football
+
 
