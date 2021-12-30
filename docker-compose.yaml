@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./application
+    image: football-app:latest
+    container_name: football-app-frontend
+   ports:
+    - target: 5000
+      published: 80
+  backend:
+    build: ./application
+    image: football-app:latest
+    container_name: football-app-backend
+    environment:
+      DATABASE_URI:
+      CREATE_SCHEMA:
+    ports:
+    - target: 5000
+      published: 5000
+
