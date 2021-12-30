@@ -17,4 +17,4 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 #docker login
-docker login --username $DOCKER_HUB_CREDS_USR --password $DOCKER_HUB__CREDS_PSW
+docker login --username $DOCKER_HUB_CREDS_USR --password $DOCKER_HUB_CREDS_PSW
