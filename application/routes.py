@@ -1,13 +1,13 @@
-from flask import render_template, request, redirect, url_for 
+from flask import render_template, request, redirect, url_for
 from application import app, db
-from application.models import Players
+from application.models import Teams, Players
 from application.forms import Player_nameForm
 
 @app.route('/')
 def home():
-    all_players = Players.query.all()  #retreives list of players from db 
-    return render_template("index.html", title="Home", all_players=all_players)
-
+    all_players = Players.query.all() 
+    all_teams = Teams.query.all()
+    return render_template("index.html", title="Home", all_teams=all_teams, all_players=all_players)
 
 
 @app.route('/create_player', methods=["GET","POST"])
@@ -15,8 +15,12 @@ def create_player():
     form = Player_nameForm()
 
     if request.method == "POST":
-        new_player = Players(player_name=form.player_name.data, position=form.position.data) 
+
+        new_player = Players(player_name=form.player_name.data, position=form.position.data)
+        new_team = Teams(team_name=form.team.data)
+        db.session.add(new_team)
         db.session.add(new_player)
+
         db.session.commit()
         
         return redirect(url_for("home"))
@@ -39,6 +43,8 @@ def update_player(id):
 @app.route('/delete_player/<int:id>')
 def delete_player(id):
     player = Players.query.get(id)
+    team = Teams.query.get(id)
+    db.session.delete(team)
     db.session.delete(player)
     db.session.commit()
         

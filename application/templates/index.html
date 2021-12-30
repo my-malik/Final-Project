@@ -1,17 +1,34 @@
 {% extends "layout.html" %}
 {% block body %}
 
-    <p style="color:rgb(0, 0, 0)">Here are the players in your team!</p>
+    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color:rgb(0, 0, 0); font-size: 20px;">Here are the players in your team!</p>
 
 
-{% for player_name in all_players %}
-    <p> 
-        Player {{ player_name.id }}: <b>{{ player_name.player_name.title() }}</b> <br>
-        Position: <b> {{ player_name.position }}</b> <br>
-        <br>
-        <a href="{{ url_for ('update_player', id=player_name.id )}}"> Update player </a> <br>
-        <a href="{{ url_for ('delete_player', id=player_name.id )}}"> Delete player </a>
+{% for teams in all_teams %}
+    <p>
+    
+{% if teams.team_name == 'Manchester United' %}
+{{ teams.team_name }}
+        {% for player_name in all_players %}
         
+        <p> 
+            
+
+            Player {{ player_name.id }}: <b>{{ player_name.player_name.title() }}</b> <br>
+            Position: <b> {{ player_name.position }}</b> <br>
+    
+
+            <a href="{{ url_for ('update_player', id=player_name.id )}}"> Update player </a> <br>
+            <a href="{{ url_for ('delete_player', id=player_name.id )}}"> Delete player </a>
+        
+        </p>
+       
+        {% endfor %}
+{% endif %}
     </p>
 {% endfor %}
+
+
+
 {% endblock body %}

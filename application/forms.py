@@ -14,9 +14,8 @@ class Player_nameForm(FlaskForm):
     )
     team = SelectField("Team:", 
         choices=[ 
-            ('ManU','ManU'),
-            ('City','City')
-
+            ('Manchester United','Man United'),
+            ('Liverpool','Liverpool')
         ]
     )
     submit = SubmitField("Add player")

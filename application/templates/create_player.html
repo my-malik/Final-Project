@@ -5,8 +5,8 @@
 <form method="POST" action=''>
     {{ form.hidden_tag() }}
     {{ form.player_name.label }} {{ form.player_name }}
-    {{ form.position.label }} {{ form.position }} <br>
-
+    {{ form.position.label }} {{ form.position }}
+    {{ form.team.label }} {{ form.team }}
     {{ form.submit }}<br>
 </form>
 {% endblock body %}
