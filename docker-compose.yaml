@@ -1,20 +1,20 @@
-# version: "3.8"
-# services:
-#   football-app:
-#     container_name: football_app
-#     image: mmalik/football_app:latest
-#     build: .
-#     ports:
-#     - target: 5000
-#       published: 80
-#     environment:
-#       DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@football_database:3306/football
-#       CREATE_SCHEMA:
-#   database:
-#     container_name: football_database
-#     image: mysql:5.7
-#     environment:
-#       MYSQL_ROOT_PASSWORD:
-#       MYSQL_DATABASE: football
+version: "3.8"
+services:
+  football-app:
+    container_name: football_app
+    image: mmalik/football_app:latest
+    build: .
+    ports:
+    - target: 5000
+      published: 80
+    environment:
+      DATABASE_URI: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD}@football_database:3306/football
+      CREATE_SCHEMA:
+  database:
+    container_name: football_database
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: football
 
 
