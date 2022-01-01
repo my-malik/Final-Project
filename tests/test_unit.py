@@ -48,9 +48,9 @@ class TestRead(TestBase):
         response = self.client.get(url_for("home"))
         self.assertIn("Player",str(response.data))
 
-    def test_read_team(self):
-        response = self.client.get(url_for("home"))
-        self.assertIn("Team",str(response.data))
+    # def test_read_team(self):
+    #     response = self.client.get(url_for("home"))
+    #     self.assertIn("Team",str(response.data))
 
 
 

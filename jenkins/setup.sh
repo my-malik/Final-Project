@@ -4,7 +4,7 @@ echo "setup stage"
 
 #apt
 sudo apt-get update
-sudo apt-get install -y curl jq
+sudo apt-get install -y curl jq python3-venv
 #installing docker
 
 curl https://get.docker.com | sudo bash
