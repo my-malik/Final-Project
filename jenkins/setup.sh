@@ -6,10 +6,11 @@ echo "setup stage"
 sudo apt-get update
 sudo apt-get install -y curl jq python3-venv
 #installing docker
+if [ ! -f "/usr/bin/docker" ]; then
 
-curl https://get.docker.com | sudo bash
-sudo usermod -aG docker jenkins
-newgrp docker
+    curl https://get.docker.com | sudo bash
+    sudo usermod -aG docker jenkins
+fi
 
 #install docker compose
 
