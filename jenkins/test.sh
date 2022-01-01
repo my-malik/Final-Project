@@ -15,7 +15,7 @@ mkdir testreports
 # run pytest
 
 python3 -m pytest --cov=application --cov-report term-missing \
-    --cov-report xml:testreports/coverage.xml junitxml=testreports/junit_report.xml
+    --cov-report xml:testreports/coverage.xml --junitxml=testreports/junit_report.xml
 
 # removing venv
 deactivate
