@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment{
         DOCKER_HUB_CREDS = credentials("mmalik18-dockerhub")
-        DATABASE_URI = credentials("DATABASE_URI")
     }
     stages {
         stage('Setup') {
