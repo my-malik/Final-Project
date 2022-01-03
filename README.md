@@ -8,6 +8,7 @@ To create a continuous integration (CI)/continuous deployment (CD) pipeline that
 **link to screen recording: **
 
 https://drive.google.com/file/d/1P29GLC0EJdxXxmjDh9fub3nliGAuDy0U/view?usp=sharing
+
 **Project:**
 
 •	The fantasy football app created is a web application which uses the Flask web framework that has CRUD functionality. It uses a database with a one-to-many relationship, where one team has many players.
