@@ -10,7 +10,7 @@ class Players(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     player_name = db.Column(db.String(30), nullable=False)
     position = db.Column(db.String(30),nullable=False)  
-    team_id = db.Column(db.Integer, db.ForeignKey('teams.id'), nullable=True) #nullable=false
+    team_id = db.Column(db.Integer, db.ForeignKey('teams.id'), nullable=True)
 
 
 
